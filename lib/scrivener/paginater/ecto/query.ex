@@ -38,8 +38,8 @@ defimpl Scrivener.Paginater, for: Ecto.Query do
       query
       |> exclude(:order_by)
       |> exclude(:preload)
-      |> exclude(:select)
-      |> exclude(:group_by)
+      # |> exclude(:select)
+      # |> exclude(:group_by)
       |> select([m], count(field(m, ^primary_key), :distinct))
       |> repo.one
 
